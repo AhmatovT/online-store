@@ -1,11 +1,14 @@
 import './App.css';
+import Footer from './component/Footer/Footer';
+import HomePage from './component/HomePage/HomePage';
 import Navbar from './component/Navbar/Navbar';
 
 function App() {
   return (
     <>
-      <div>Salom</div>
       <Navbar />
+      <HomePage />
+      <Footer />
     </>
   );
 }

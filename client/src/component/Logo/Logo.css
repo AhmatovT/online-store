@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+
 .brand {
   width: 65%;
   height: 250px;
@@ -19,9 +20,11 @@
 }
 .logo b span {
   animation: blink linear infinite 2s;
+  font-family: Vibur;
 }
 .logo b span:nth-of-type(2) {
   animation: blink linear infinite 3s;
+  
 }
 @keyframes blink {
   78% {

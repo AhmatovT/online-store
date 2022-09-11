@@ -3,7 +3,7 @@ import Logo from '../Logo/Logi';
 import './Navbar.css'
 function Navbar(props) {
     return (
-        <header>
+        <header className='header'>
             <div className='Brand'><Logo /></div> 
               <ul className='nav_link'>
                 <li><a href='/'>Home</a></li>
