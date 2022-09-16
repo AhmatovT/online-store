@@ -3,18 +3,30 @@ const mongoose = require("mongoose");
 const Category = mongoose.model("Category");
 const router = Router();
 
-router.get("/all/category", async(req, res) => {
+router.get("/all/category", async (req, res) => {
   const category = await Category.find();
-  res.status(200).json({category});
-})
-
-router.get("/one/category/:id", async(req, res) => {
-  const category = await Category.findById(req.params.id)
-  if(!category){
-    res.status(404).json({error: "Not found!"})
+  if (!category) {
+    res.status(404).json({ error: "Not found!" });
   }
-  res.status(200).json({category});
-})
+  res.status(200).json({ category });
+});
+
+router.get("/one/category/:id", async (req, res) => {
+  const category = await Category.findById(req.params.id);
+  if (!category) {
+    res.status(404).json({ error: "Not found!" });
+  }
+  res.status(200).json({ category });
+});
+
+router.post("/update/category", async (req, res) => {
+  const {category_id} = req.query;
+  delete category_id;
+  const newCategory = await Category.findByIdAndUpdate(category_id, req.body);
+  res.status(200).json({newCategory});  
+});
+
+
 
 router.post("/create/category", async (req, res) => {
   try {
@@ -32,7 +44,7 @@ router.post("/create/category", async (req, res) => {
       title,
     });
     await newCategory.save();
-    res.status(200).json({msg: "Request added successfully!"})
+    res.status(200).json({ msg: "Request added successfully!" });
   } catch (err) {
     console.log(err);
   }
