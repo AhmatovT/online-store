@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../Logo/Logi";
+import {Link} from 'react-router-dom'
 import "./Navbar.css";
 function Navbar(props) {
   return (
@@ -21,13 +22,13 @@ function Navbar(props) {
         <button className="button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </li>
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/">SignIn</a>
+          <Link to="/signIn">SignIn</Link>
         </li>
         <li>
-          <a href="/">Profile</a>
+          <Link to="/">Profile</Link>
         </li>
       </ul>
     </header>

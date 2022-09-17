@@ -17,7 +17,7 @@ export default function Footer(){
                 <li><a href="/">Contact</a></li>    
             </ul>
             
-            <p>2022 WebDevwlopers company| All Right Reserved</p>
+            <p>2022 WebDevwlopers company  | All Right Reserved</p>
         </footer>
        </div>
     )

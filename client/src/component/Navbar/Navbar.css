@@ -33,7 +33,7 @@ header{
     transition: all 0.3s ease 0s;
 }
 .nav_link li a:hover{
-    color: #0088a9 ; 
+    color: #000000 ; 
 } 
   .search-container{
     width: 490px;

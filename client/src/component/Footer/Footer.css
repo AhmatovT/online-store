@@ -36,6 +36,11 @@ footer .social_icon li a{
 footer .social_icon li a:hover{
     transform: translateY(-10px);
 }
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 footer .menu li a{
     font-size: 1.2em;
     color:#fff;
