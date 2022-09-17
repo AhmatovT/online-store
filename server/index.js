@@ -1,15 +1,23 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const {MOGO_URI} = require("./keys");
+const dotenv = require("dotenv");
 
 const app = express();
+dotenv.config();
+mongoose.connect(process.env.MONGO_URL);
 
-mongoose.connect(MOGO_URI);
+require("./modules/user");
+require("./modules/category");
+require("./modules/product");
+app.use(express.json());
+app.use(require("./routes/auth"));
+app.use(require("./routes/category"));
+app.use(require("./routes/product"));
 
-mongoose.connection.on("Connected", () => {
+mongoose.connection.on("connected", () => {
   console.log("MongoDB succesfully");
 })
-mongoose.connection.on("Error", (err) => {
+mongoose.connection.on("error", (err) => {
   console.log("MongoDB succesfully", err);
 })
 
