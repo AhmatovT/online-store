@@ -1,34 +1,55 @@
 const { Router } = require("express");
 const mongoose = require("mongoose");
+const { route } = require("./product");
 const Category = mongoose.model("Category");
 const router = Router();
 
-router.get("/all/category", async (req, res) => {
-  const category = await Category.find();
-  if (!category) {
-    res.status(404).json({ error: "Not found!" });
+router.get("/category/all", async (req, res) => {
+  try {
+    const category = await Category.find().sort({ createdAt: -1 });
+    if (!category) {
+      res.status(404).json({ error: "Not found!" });
+    }
+    res.status(200).json({ category });
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.status(200).json({ category });
 });
 
-router.get("/one/category/:id", async (req, res) => {
-  const category = await Category.findById(req.params.id);
-  if (!category) {
-    res.status(404).json({ error: "Not found!" });
+router.get("/category/:id", async (req, res) => {
+  try {
+    const category = await Category.findById(req.params.id);
+    res.status(200).json({ category });
+  } catch (err) {
+    res.status(500).json(err);
   }
-  res.status(200).json({ category });
 });
 
-router.post("/update/category", async (req, res) => {
-  const {category_id} = req.query;
-  delete category_id;
-  const newCategory = await Category.findByIdAndUpdate(category_id, req.body);
-  res.status(200).json({newCategory});  
+router.post("/category/update", async (req, res) => {
+  try {
+    const { category_id } = req.query;
+    const newCategory = await Category.findByIdAndUpdate(
+      category_id,
+      req.body,
+      { new: true }
+    );
+    res.status(200).json({ newCategory });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
+router.post("/category/delete", async (req, res) => {
+  try {
+    const { category_id } = req.query;
+    const deleteCategory = await Category.deleteOne({ id: category_id });
+    res.status(200).json({ deleteCategory });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
-
-router.post("/create/category", async (req, res) => {
+router.post("category/create", async (req, res) => {
   try {
     const { title } = req.body;
     if (!title) {
@@ -49,5 +70,10 @@ router.post("/create/category", async (req, res) => {
     console.log(err);
   }
 });
+
+// router.post("/category/search", async(req, res) => {
+//   const categorySearch = new RegExp("^" + req.body.query);
+//   const result = await Category.find({})
+// })
 
 module.exports = router;
