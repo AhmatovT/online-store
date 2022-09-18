@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const {verifyToken} = require("./middleware/verifyToken");
 
 const app = express();
 dotenv.config();
@@ -15,7 +14,6 @@ app.use(express.json());
 app.use(require("./routes/auth"));
 app.use(require("./routes/category"));
 app.use(require("./routes/product"));
-app.use(verifyToken, require("./routes/orders"));
 
 mongoose.connection.on("connected", () => {
   console.log("MongoDB succesfully");
