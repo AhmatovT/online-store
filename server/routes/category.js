@@ -49,10 +49,10 @@ router.post("/category/delete", async (req, res) => {
   }
 });
 
-router.post("category/create", async (req, res) => {
+router.post("/category/create", async (req, res) => {
   try {
-    const { title } = req.body;
-    if (!title) {
+    const { title, img } = req.body;
+    if (!title || !img) {
       return res
         .status(422)
         .json({ error: "Fill in the information completely!" });
@@ -63,6 +63,7 @@ router.post("category/create", async (req, res) => {
     }
     const newCategory = new Category({
       title,
+      img,
     });
     await newCategory.save();
     res.status(200).json({ msg: "Request added successfully!" });
