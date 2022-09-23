@@ -58,3 +58,14 @@
     text-shadow: inherit;
   }
 }
+
+
+@media (max-width: 550px) {
+  .brand{
+    width: 45%;
+    height: 150px;  
+  }
+  .logo b{
+    font-size: 20px;
+  }
+}

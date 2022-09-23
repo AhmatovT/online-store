@@ -1,0 +1,45 @@
+import React from "react";
+
+function Carusel(props) {
+  return (
+    <div>
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide my-5"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://pbs.twimg.com/media/DY9wN9wXkAA9kdb?format=jpg&name=4096x4096" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://pbs.twimg.com/media/DY9wN9wXkAA9kdb?format=jpg&name=4096x4096" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="https://pbs.twimg.com/media/DY9wN9wXkAA9kdb?format=jpg&name=4096x4096" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleInterval"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default Carusel;
