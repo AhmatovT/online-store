@@ -36,6 +36,9 @@ form button .bi-search{
     font-size: 22px;
     color: #fff;
 }
+form button .bi-search:active {
+    border: none;
+}
 header nav{
     display: flex;
     align-items: center;
@@ -91,12 +94,17 @@ nav .bi-x-lg{
     nav .nav_link{
         position: absolute;
         right: 0px;
+        border-radius: 5px;
+        box-shadow:0 0 7px rgba(0,0,0, 0.5);
         top: 90px;
         display: flex;
         flex-direction: column;
+        background-color: #555;
+        z-index: 999;
     }
     nav .nav_link a{
         margin-bottom: 15px;
+        z-index: 99999;
     }
 
     form input{

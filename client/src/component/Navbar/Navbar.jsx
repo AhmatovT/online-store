@@ -21,7 +21,7 @@ function Navbar(props) {
           <div className="nav_link">
             <a href="/">Home</a>
             <a href="/">Profile</a>
-            <a href="/">Sign In</a>
+            <a href="/signin">SignIn</a>
           </div>
         )}
         <i class="bi bi-cart3">

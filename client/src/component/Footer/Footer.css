@@ -9,7 +9,7 @@ footer{
     position: relative;
     width: 100%;
     min-height: 80px;
-    background-color: #2183a2;
+    background-color: #f5f5ff;
     padding: 20px 50px;
     justify-content: center;
     align-items:center;
@@ -27,7 +27,7 @@ footer .social_icon li{
 }
 footer .social_icon li a{
     font-size: 2em;
-    color:#fff;
+    color:rgb(177, 47, 47);
     margin: 0 10px;
     display: inline-block;
     transition: 0.5s;
@@ -41,9 +41,12 @@ footer .social_icon li a:hover{
     justify-content: center;
     align-items:center;
 }
+footer .menu li{
+    list-style: none;
+}
 footer .menu li a{
     font-size: 1.2em;
-    color:#fff;
+    color: rgb(177, 47, 47);
     margin: 0 10px;
     display: inline-block;
     text-decoration: none;
@@ -51,9 +54,10 @@ footer .menu li a{
 }
 footer .menu li a:hover{
     opacity: 1;
+    color:rgb(77, 6, 6)
 }
 footer p{
-    color:#fff;
+    color:rgb(177, 47, 47);
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
