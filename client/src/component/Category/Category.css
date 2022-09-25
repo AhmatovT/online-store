@@ -13,6 +13,14 @@
   scroll-snap-type: inline mandatory;
   overscroll-behavior-inline: contain;
 }
+.category-item-container::-webkit-scrollbar{
+  height: 10px;
+  background: #efeded;
+}
+.category-item-container::-webkit-scrollbar-thumb{
+  background: lightseagreen;
+  border-radius: 20px;
+}
 .category-item {
   width: 307px;
   height: 84px;

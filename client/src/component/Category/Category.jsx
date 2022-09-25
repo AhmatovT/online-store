@@ -49,7 +49,7 @@ function Catalog(props) {
                   <h3 class="category-item-title">{el.title}</h3>
                   <p class="category-item-amount">53</p>
                 </div>
-                <a href="#" class="category-btn">
+                <a href="/" class="category-btn">
                   Show All
                 </a>
               </div>

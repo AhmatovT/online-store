@@ -17,13 +17,12 @@ function Navbar(props) {
         </button>
       </form>
       <nav>
-        {activeNav && (
-          <div className="nav_link">
+          <div className={!activeNav ? "nav_link" : "nav_active_link"}>
+            <div className="logotp"><Logo /></div>
             <a href="/">Home</a>
             <a href="/">Profile</a>
             <a href="/signin">SignIn</a>
           </div>
-        )}
         <i class="bi bi-cart3">
           <div className="cart_items">
             <i>1</i>

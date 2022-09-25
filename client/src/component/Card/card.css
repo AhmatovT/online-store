@@ -1,12 +1,11 @@
 .product-grid {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 .product-grid .showcase {
-  width: 222px;
   align-items:center;
   gap: 5;
   margin-right: 30px;
@@ -19,7 +18,7 @@
 
 .product-grid .showcase:hover { box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1); }
 
-.product-grid .showcase-banner { position: relative; }
+.product-grid .showcase-banner { position: relative; width: 100%; }
 
 .product-grid .showcase-img {
   width: 100%;
@@ -28,7 +27,7 @@
   transition: var(--transition-timing);
 }
 .product-grid .showcase-img{
-  width: 222px;
+  width: 100%;
   height: 300px;
 }
 
