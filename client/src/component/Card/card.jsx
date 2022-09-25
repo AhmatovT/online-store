@@ -22,6 +22,11 @@ const productApi = [
     title: "Noutbook",
     img: "https://www.digitaltrends.com/wp-content/uploads/2021/09/iphone-13-pro-review-dan-baker-35.jpg?resize=625%2C417&p=1",
   },
+  {
+    id: 5,
+    title: "Noutbook",
+    img: "https://www.digitaltrends.com/wp-content/uploads/2021/09/iphone-13-pro-review-dan-baker-35.jpg?resize=625%2C417&p=1",
+  },
 ];
 
 function Card() {
